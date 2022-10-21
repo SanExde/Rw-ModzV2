@@ -95,40 +95,32 @@ let psan = 'bagaimana kabarmu?'
 let usrs = db.data.users[m.sender]
 let fkontak = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: `status@broadcast` } : {}) }, message: { 'contactMessage': { 'displayName': wm, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${wm},;;;\nFN:${wm},\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabell:Ponsel\nEND:VCARD`, 'jpegThumbnail': fs.readFileSync('./thumbnail.jpg'), thumbnail: fs.readFileSync('./thumbnail.jpg'),sendEphemeral: true}}}   
 let kata =`
-╔═════⟪*DASHBOARD*⟫══════⟕
-║
+╔═════⟪*DASHBOARD*⟫══════
 ╟❖ *${ucapan()} @${m.sender.split`@`[0]}*
-║
-╟══════════════════════⟕
-║
-║         ❰ *𝑼𝒔𝒆𝒓 𝑰𝒏𝒇𝒐𝒓𝒎𝒂𝒕𝒊𝒐𝒏* ❱
+╟══════════════════════
+║   ❰ *𝑼𝒔𝒆𝒓 𝑰𝒏𝒇𝒐𝒓𝒎𝒂𝒕𝒊𝒐𝒏* ❱
 ║         
-║ ❥ *𝙽𝙰𝙼𝙴:* ${usrs.registered ? usrs.name : conn.getName(m.sender)}
-║ ❥ *𝚃𝙰𝙶𝚂:* @${m.sender.split`@`[0]}
-║ ❥ *𝚂𝚃𝙰𝚃𝚄𝚂:* ${m.sender.split`@`[0] == nomorown ? 'Developer' : (usrs.premiumTime >= 1 ? 'Premium User' : 'Free User')}
-║ ❥ *𝙿𝚁𝙴𝙼𝙸𝚄𝙼:* ${usrs.premiumTime > 1 ? 'Yes': 'No'}
+║╰≻ *𝙽𝙰𝙼𝙴:* ${usrs.registered ? usrs.name : conn.getName(m.sender)}
+║╰≻ *𝚃𝙰𝙶𝚂:* @${m.sender.split`@`[0]}
+║╰≻ *𝚂𝚃𝙰𝚃𝚄𝚂:* ${m.sender.split`@`[0] == nomorown ? 'Developer' : (usrs.premiumTime >= 1 ? 'Premium User' : 'Free User')}
+║╰≻ *𝙿𝚁𝙴𝙼𝙸𝚄𝙼:* ${usrs.premiumTime > 1 ? 'Yes': 'No'}
+║═════════════════════
+║   ❰ *𝑩𝒐𝒕 𝑰𝒏𝒇𝒐𝒓𝒎𝒂𝒕𝒊𝒐𝒏* ❱
 ║
-╟══════════════════════⟕
-║
-║         ❰ *𝑩𝒐𝒕 𝑰𝒏𝒇𝒐𝒓𝒎𝒂𝒕𝒊𝒐𝒏* ❱
-║
-║ ❥ *𝙱𝙾𝚃 𝙽𝙰𝙼𝙴:* ${namebot}
-║ ❥ *𝚃𝚈𝙿𝙴:* Node.Js
-║ ❥ *𝙱𝙰𝙸𝙻𝙴𝚈𝚂:* Multi device
-║ ❥ *𝚄𝙿𝚃𝙸𝙼𝙴:* ${mpt}
-║ ❥ *𝚃𝙸𝙼𝙴:* ${moment.tz('Asia/Jakarta').format('HH')} H  ${moment.tz('Asia/Jakarta').format('mm')} M  ${moment.tz('Asia/Jakarta').format('ss')} S
-║ ❥ *𝚄𝚂𝙴𝚁𝚂:* ${Object.keys(global.db.data.users).length}
-║ ❥ *𝙻𝙸𝙼𝙸𝚃:* ${usrs.limit}
-║ ❥ *𝙻𝙴𝚅𝙴𝙻:* ${usrs.level}
-║ ❥ *𝚁𝙾𝙻𝙴:* ${usrs.role}${usrs.premiumTime > 1 ? `
-║ ❥ *𝙴𝚇𝙿𝙸𝚁𝙴𝙳 𝙿𝚁𝙴𝙼𝙸𝚄𝙼:*
+║╰≻ *𝙱𝙾𝚃 𝙽𝙰𝙼𝙴:* ${namebot}
+║╰≻ *𝚃𝚈𝙿𝙴:* Node.Js
+║╰≻ *𝙱𝙰𝙸𝙻𝙴𝚈𝚂:* Multi device
+║╰≻ *𝚄𝙿𝚃𝙸𝙼𝙴:* ${mpt}
+║╰≻ *𝚃𝙸𝙼𝙴:* ${moment.tz('Asia/Jakarta').format('HH')} H  ${moment.tz('Asia/Jakarta').format('mm')} M  ${moment.tz('Asia/Jakarta').format('ss')} S
+║╰≻ *𝚄𝚂𝙴𝚁𝚂:* ${Object.keys(global.db.data.users).length}
+║╰≻ *𝙻𝙸𝙼𝙸𝚃:* ${usrs.limit}
+║╰≻ *𝙻𝙴𝚅𝙴𝙻:* ${usrs.level}
+║╰≻ *𝚁𝙾𝙻𝙴:* ${usrs.role}${usrs.premiumTime > 1 ? `
+║╰≻ *𝙴𝚇𝙿𝙸𝚁𝙴𝙳 𝙿𝚁𝙴𝙼𝙸𝚄𝙼:*
 ${clockStringP(usrs.premiumTime - new Date())}` : ''}
-║
-╟══════════════════════⟕
-╨
-⏣    「 RW MODZ 」
-╥
-╚══════════════════════⟕
+║═════════════════════
+║   「 RW MODZ 」
+══════════════════════
 `   
   let buttonMessage= {
 'document':{'url':sgc},
