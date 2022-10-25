@@ -37,9 +37,9 @@ const defaultMenu = {
 ⭔ *Ⓟ* = Premium
 ⭔ *Ⓛ* = Limit
 `.trimStart(),
-header: '╭─❲ %category ❳',
-body: `│ ⭔  %cmd %isPremium %islimit`,
-footer: `╰──────────\n`,
+header: '╭══⟪ %category ⟫══',
+body: `║ ⭔  %cmd %isPremium %islimit`,
+footer: `╰═════════───\n`,
 after: ` `,
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
